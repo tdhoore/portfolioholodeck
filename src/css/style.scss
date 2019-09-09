@@ -1,6 +1,40 @@
 @import "reset";
 @import "vars";
 
+@mixin fullscreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+*,
+*:before,
+*:after {
+  /* stylelint-disable-line */
+  box-sizing: inherit;
+}
+
+.hide {
+  display: none;
+}
+
 body {
-  background-color: red;
+  @include fullscreen;
+  //background-color: #17172b;
+  background-color: #fff;
+}
+
+#sceneHolder {
+  @include fullscreen;
+  z-index: 2;
 }
