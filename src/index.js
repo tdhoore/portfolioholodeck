@@ -4,6 +4,9 @@ import ReactDOM from "react-dom";
 import React from "react";
 import Scene from "./js/classes/Scene.js";
 import HoloDeck from "./js/containers/HoloDeck.jsx";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import rootReducer from "./js/reducers/rootReducer.js";
 
 class App {
   constructor() {
@@ -34,7 +37,16 @@ class App {
 //initilaize app
 const app = new App();
 
+//load scene
 app.loadScene();
 
+//init store
+const store = createStore(rootReducer);
+
 //init react
-ReactDOM.render(<HoloDeck />, document.getElementById("root"));
+ReactDOM.render(
+  <Provider store={store}>
+    <HoloDeck />
+  </Provider>,
+  document.getElementById("root")
+);
