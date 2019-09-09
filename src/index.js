@@ -1,11 +1,13 @@
 import "./css/style.scss";
 import * as THREE from "three";
+import ReactDOM from "react-dom";
+import React from "react";
 import Scene from "./js/classes/Scene.js";
+import HoloDeck from "./js/containers/HoloDeck.jsx";
 
 class App {
   constructor() {
     this.player = false;
-
     this.container = document.querySelector("#sceneHolder");
   }
 
@@ -33,3 +35,6 @@ class App {
 const app = new App();
 
 app.loadScene();
+
+//init react
+ReactDOM.render(<HoloDeck />, document.getElementById("root"));

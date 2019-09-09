@@ -38,3 +38,8 @@ body {
   @include fullscreen;
   z-index: 2;
 }
+
+#root {
+  @include fullscreen;
+  z-index: 1;
+}
