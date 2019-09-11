@@ -34,6 +34,10 @@ body {
   background-color: #fff;
 }
 
+.page {
+  @include fullscreen;
+}
+
 #sceneHolder {
   @include fullscreen;
   z-index: 2;
@@ -42,4 +46,17 @@ body {
 #root {
   @include fullscreen;
   z-index: 5;
+}
+
+/* HOME */
+.line {
+  height: 0.2rem;
+  width: 10rem;
+  background-color: $lineColor;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
