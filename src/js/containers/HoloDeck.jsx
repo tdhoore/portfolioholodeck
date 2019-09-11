@@ -1,29 +1,36 @@
 import React, { Component } from "react";
-import {
-  Route,
-  BrowserRouter
-} from "react-router-dom";
-import Page from "./Page.jsx"
+import { Route, Router, Switch } from "react-router-dom";
+import { createBrowserHistory } from "history";
+import Page from "./Page.jsx";
 import { connect } from "react-redux";
+
+const history = createBrowserHistory();
 
 class HoloDeck extends Component {
   render() {
-    
     return (
-      <BrowserRouter>
-        <Route path={"/"} render={
-          (props) => <Page {...props} pageTitle={this.props.pageTitle} />
-          }/>
-        <Route path={"/work"} component={Page}/>
-        <Route path={"/project/:id"} component={Page}/>
-        <Route path={"/about"} component={Page}/>
-        <Route path={"/contact"} component={Page}/>
-      </BrowserRouter>
+      <Router history={history}>
+        <Switch>
+          <Route
+            exact
+            path={"/"}
+            render={props => <Page {...props} pageTitle="Home" />}
+          />
+          <Route exact path={"/work"} component={Page} />
+          <Route
+            exact
+            path={"/project/:id"}
+            render={props => <Page {...props} pageTitle="Project" />}
+          />
+          <Route exact path={"/about"} component={Page} />
+          <Route exact path={"/contact"} component={Page} />
+        </Switch>
+      </Router>
     );
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     pageTitle: state.pageTitle
   };
