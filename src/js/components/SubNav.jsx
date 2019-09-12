@@ -8,7 +8,7 @@ class SubNav extends Component {
       //render counter
       return (
         <div className="counter">
-          <p>{this.props.current}</p>
+          <p>{this.props.current + 1}</p>
           <p>{this.props.max}</p>
         </div>
       );

@@ -1,13 +1,21 @@
 import React, { Component } from "react";
+import PageSlider from "./PageSlider.jsx";
 import SubNav from "./SubNav.jsx";
 import { connect } from "react-redux";
 
 class Work extends Component {
   render() {
     return (
-      <div>
+      <section>
+        <h2 className="hide">Work</h2>
+        <PageSlider
+          contentType="work"
+          content={this.props.allProjects}
+          current={this.props.currentWork}
+          max={this.props.maxWorks}
+        />
         <SubNav current={this.props.currentWork} max={this.props.maxWorks} />
-      </div>
+      </section>
     );
   }
 }
@@ -15,7 +23,8 @@ class Work extends Component {
 const mapStateToProps = state => {
   return {
     currentWork: state.currentWork,
-    maxWorks: state.maxWorks
+    maxWorks: state.maxWorks,
+    allProjects: state.allProjects
   };
 };
 

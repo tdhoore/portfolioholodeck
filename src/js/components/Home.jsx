@@ -15,6 +15,7 @@ export default class Home extends Component {
   render() {
     return (
       <div ref={this.htmlRef} className="page home">
+        <Link to="/project/1">Project link</Link>
         <div className="homeDeco homeDecoLeft">
           <div className="sideBar"></div>
           <div className="connectors">
