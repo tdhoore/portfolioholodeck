@@ -8399,6 +8399,7 @@ three-addons@^1.2.0:
 three-renderer-css3d@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/three-renderer-css3d/-/three-renderer-css3d-1.0.0.tgz#a0eebe89dc86cece7651b6a59925967008dd709f"
+  integrity sha1-oO6+idyGzs52UbalmSWWcAjdcJ8=
 
 three@^0.89.0:
   version "0.89.0"

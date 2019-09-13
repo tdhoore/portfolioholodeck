@@ -1,21 +1,27 @@
 import * as THREE from "three";
 
 class Animator {
-  constructor() {
+  constructor(
+    params = {
+      animLength: 800,
+      delay: 300,
+      easeFunc: TWEEN.Easing.Quartic.Out
+    }
+  ) {
     this.tween = false;
 
     this.currentPos = false;
     this.currentRot = false;
 
-    this.animLength = 800;
-    this.delay = 300;
-    this.easeFunc = TWEEN.Easing.Quartic.Out;
+    this.animLength = params.animLength;
+    this.delay = params.delay;
+    this.easeFunc = params.easeFunc;
 
     this.isAnimating = false;
   }
 
   setObject(object) {
-    //check if cam is set
+    //check if object is set
     if (!object) {
       console.log("no object");
       return;

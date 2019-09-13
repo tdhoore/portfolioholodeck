@@ -7,6 +7,7 @@ import HoloDeck from "./js/containers/HoloDeck.jsx";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import rootReducer from "./js/reducers/rootReducer.js";
+import Carroucel from "./js/classes/Carroucel.js";
 
 class App {
   constructor() {
@@ -26,9 +27,26 @@ class App {
 
       this.container.appendChild(this.player.dom);
 
+      //tester
+      const cssrenderer = new Carroucel({
+        allSlides: [],
+        currentSlide: false,
+        container: document.body,
+        camera: this.player.camera,
+        width: window.innerWidth,
+        height: window.innerHeight,
+        className: ""
+      });
+
+      cssrenderer.setup();
+
       //add resize event for webgl and css scenes
       window.addEventListener("resize", () => {
+        //resize three scene
         this.player.setSize(window.innerWidth, window.innerHeight);
+
+        //resize css3d Scene
+        cssrenderer.setSize();
       });
     });
   }
