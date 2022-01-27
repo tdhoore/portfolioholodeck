@@ -44,7 +44,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "stats-js": "^1.0.1",
-    "three": "^0.89.0",
+    "three": "^0.137.0",
     "three-addons": "^1.2.0",
     "three-renderer-css3d": "^1.0.0"
   }
